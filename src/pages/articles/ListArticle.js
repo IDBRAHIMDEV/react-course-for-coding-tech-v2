@@ -41,7 +41,7 @@ function ListArticle() {
           <Link to="/blog/add" className='btn btn-primary'>
             <FaPlusSquare /> Add
           </Link>
-        </div>
+        </div>  
       </div>
       <div className="row my-3">
         <div className="col-md-12">
