@@ -72,7 +72,10 @@ function ListArticle() {
                   <td> <img src={article.image} alt={article.title} width="80px" /></td>
                   <td>{article.title}</td>
                   <td>{article.body}</td>
-                  <td></td>
+                  <td>
+                    <Link to={`edit/${article.id}`} className="me-2 btn btn-sm btn-warning">Edit</Link>
+                    <button className="btn btn-sm btn-danger">Delete</button>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -92,7 +95,7 @@ function ListArticle() {
               <img className="card-img-top" src={article.image} alt={article.title} />
               <div className="card-body">
                 <h4 className="card-title">{article.title}</h4>
-                <p className="card-text">{article.body}</p>
+                <p className="card-text">{article.body.substring(0, 40)}</p>
               </div>
             </div>
           </div>

@@ -20,7 +20,7 @@ export const routers = createBrowserRouter([
 
         {path: '', element: <ListArticle />},
         {path: 'add', element: <AddArticle />},
-        {path: 'edit', element: <EditArticle />},
+        {path: 'edit/:id', element: <EditArticle />},
         {path: 'show', element: <ShowArticle />},
     ]}
   ])

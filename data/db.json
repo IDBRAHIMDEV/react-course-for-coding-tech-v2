@@ -8,9 +8,11 @@
       "id": 1
     },
     {
-      "image": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/PU65W4VzTB205p8JT7PG",
-      "title": "Learn Django",
+      "title": "Learn Django ",
       "body": "Learn Django From Scratch to create a web application using python",
+      "image": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/PU65W4VzTB205p8JT7PG",
+      "tags": [],
+      "category": "",
       "active": true,
       "id": 2
     },
@@ -23,7 +25,7 @@
     },
     {
       "title": "Learn Spring boot",
-      "description": "Learn how to create a web application with Spring boot using Java",
+      "body": "Learn how to create a web application with Spring boot using Java",
       "image": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/4jgHzQESLa2F5uccFGc2",
       "id": 4
     },
