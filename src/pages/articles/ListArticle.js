@@ -92,7 +92,7 @@ function ListArticle() {
               <img className="card-img-top" src={article.image} alt={article.title} />
               <div className="card-body">
                 <h4 className="card-title">{article.title}</h4>
-                <p className="card-text">{article.body.substring(0, 40)}</p>
+                <p className="card-text">{article.body}</p>
               </div>
             </div>
           </div>

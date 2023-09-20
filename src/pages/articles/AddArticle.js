@@ -1,8 +1,38 @@
+import axios from 'axios'
+import { useFormik } from 'formik'
 import React from 'react'
 import { FaArrowLeft, FaPlus } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function AddArticle() {
+
+  const navigate = useNavigate()
+
+  const onSubmit = async (values, actions) => {
+   
+   try {
+
+    const { data } = await axios.post('http://localhost:3001/articles', values)
+
+    navigate('/blog')
+    
+   } catch (error) {
+      console.error(error)
+   }
+  }
+
+
+  const formik = useFormik({
+    initialValues: {
+      title: '',
+      body: '',
+      image: ''
+    },
+    onSubmit
+  })
+
+  console.log(formik)
+
   return (
     <>
     
@@ -19,18 +49,38 @@ function AddArticle() {
 
       <div className="row my-5">
         <div className="col-md-6 mx-auto">
-          <form action="">
+          <form onSubmit={formik.handleSubmit}>
             <div className="form-group my-3">
               <label htmlFor="">Title</label>
-              <input type="text" name="title," id="title" className="form-control" placeholder="yourtitle" />
+              <input 
+                onChange={formik.handleChange}
+                value={formik.values.title}
+                type="text" 
+                name="title" 
+                id="title" 
+                className="form-control" 
+                placeholder="your title" />
             </div>
             <div className="form-group my-3">
               <label htmlFor="">Description</label>
-              <textarea name="description," id="description" cols="30" rows="10" className="form-control" placeholder="Yourdescription"></textarea>
+              <textarea 
+                onChange={formik.handleChange}
+                name="body" 
+                id="description" 
+                rows="5" 
+                className="form-control" 
+                placeholder="Your description">{formik.values.description}</textarea>
             </div>
             <div className="form-group my-3">
               <label htmlFor="">Image</label>
-              <input type="url" name="image," id="image" className="form-control" placeholder="Yourimage" />
+              <input 
+                onChange={formik.handleChange}
+                value={formik.values.image}
+                type="url" 
+                name="image" 
+                id="image" 
+                className="form-control" 
+                placeholder="Your image" />
             </div>
             <div className="d-grid my-3">
               <button className="btn btn-primary">
