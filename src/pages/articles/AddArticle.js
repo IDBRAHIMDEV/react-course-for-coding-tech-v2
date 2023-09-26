@@ -33,6 +33,23 @@ function AddArticle() {
     onSubmit
   })
 
+  const validationChangeClass = (field) => {
+
+    let classes = "form-control border";
+
+    if(!formik.dirty) {
+      return classes
+    }
+
+    if(formik.errors[field]) {
+      return classes += " border-danger"
+    }
+
+    return classes += " border-success"
+
+
+  }
+
   console.log(formik)
 
   return (
@@ -60,7 +77,7 @@ function AddArticle() {
                 type="text" 
                 name="title" 
                 id="title" 
-                className="form-control" 
+                className={validationChangeClass('title') } 
                 placeholder="your title" />
                 {formik.errors.title && <p className='mt-1 text-danger'>{formik.errors.title}</p>}
             </div>
