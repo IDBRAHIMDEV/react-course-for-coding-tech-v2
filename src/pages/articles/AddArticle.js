@@ -3,6 +3,7 @@ import { useFormik } from 'formik'
 import React from 'react'
 import { FaArrowLeft, FaPlus } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router-dom'
+import { ArticleSchema } from '../../validationSchemas/ArticleSchema'
 
 function AddArticle() {
 
@@ -28,6 +29,7 @@ function AddArticle() {
       body: '',
       image: ''
     },
+    validationSchema: ArticleSchema,
     onSubmit
   })
 
@@ -60,6 +62,7 @@ function AddArticle() {
                 id="title" 
                 className="form-control" 
                 placeholder="your title" />
+                {formik.errors.title && <p className='mt-1 text-danger'>{formik.errors.title}</p>}
             </div>
             <div className="form-group my-3">
               <label htmlFor="">Description</label>

@@ -96,6 +96,10 @@ function ListArticle() {
               <div className="card-body">
                 <h4 className="card-title">{article.title}</h4>
                 <p className="card-text">{article.body.substring(0, 40)}</p>
+                <div className="my-3 text-center">
+                    <Link to={`edit/${article.id}`} className="me-2 btn btn-sm btn-warning">Edit</Link>
+                    <button className="btn btn-sm btn-danger">Delete</button>
+                </div>
               </div>
             </div>
           </div>
